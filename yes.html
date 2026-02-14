@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>You Said YES ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #ff758c, #ff7eb3);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 340px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    color: white;
+    z-index: 2;
+}
+
+h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+p {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+img {
+    width: 220px;
+    border-radius: 15px;
+    margin-top: 15px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.08); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.heart {
+    position: absolute;
+    font-size: 30px;
+    animation: floatUp linear infinite;
+    opacity: 0.9;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>You said YES 😭❤️</h1>
+
+    <img src="IMG_0772.gif">
+
+    <p>
+        Nana, you just made my day so special 💕<br>
+        I promise to always appreciate you.<br>
+        Thank you for being in my life ❤️<br><br>
+        Screenshot this 😌📸
+    </p>
+</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    heart.style.fontSize = (Math.random() * 18 + 25) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
